@@ -15,6 +15,30 @@ class TransactionController {
 
         return transaction;
     }
+
+    async destroy({ params }) {
+        const { id } = params;
+        console.log("este es el paramas " + id);
+
+        const transaction = await Transaction.find(id);
+
+        await transaction.delete();
+
+        return transaction;
+    }
+
+    async update({ params, request }) {
+        const { id } = params;
+        const transaction = await Transaction.find(id);
+
+        transaction.type = request.input('type');
+        transaction.quantity = request.input('quantity');
+        transaction.description = request.input('description');
+
+        await transaction.save();
+
+        return transaction;
+    }
 }
 
 module.exports = TransactionController

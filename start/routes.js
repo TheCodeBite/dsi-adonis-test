@@ -25,8 +25,8 @@ Route.group(() => {
 
 Route.group(() =>{
   Route.post('transaction/new/', 'TransactionController.store');
-  Route.delete('product/delete/:id', 'TransactionController.destroy');
-  Route.put('product/edit/:id', 'TransactionController.update');
+  Route.delete('transaction/delete/:id', 'TransactionController.destroy');
+  Route.put('transaction/edit/:id', 'TransactionController.update');
 }).prefix('api/v1/');
 
 Route.group(() =>{
@@ -44,5 +44,5 @@ Route.group(() => {
 Route.group(() => {
   Route.post('inventario/new/', 'InventarioController.store');
   Route.delete('inventario/delete/:id', 'InventarioController.destroy');
-  Route.put('inventario/update/:id', 'InventarioController.update');
+  Route.put('inventario/edit/:id', 'InventarioController.update');
 }).prefix('api/v1/')

@@ -32,7 +32,8 @@ class ProductController {
 
         producto.code  = request.input('code');
         producto.name  = request.input('name');
-        producto.description = request.input('description')
+        producto.img_url = request.input('img_url');
+        producto.description = request.input('description');
  
         await producto.save();
 
