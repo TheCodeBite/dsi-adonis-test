@@ -15,22 +15,13 @@
 
 const Factory = use('Factory')
 
-Factory.blueprint('App/Models/User', async (faker) => {
-    return {
-        username: faker.username(),
-        email: faker.email(),
-        rol: '1'
-    }
-});
+//Factory.blueprint('App/Models/User', async (faker) => {
+    
+//});
 
-Factory.blueprint('App/Models/Product', async (faker) => {
-    return{
-        name: faker.name(),
-        description: faker.paragraph(),
-        img_url: faker.avatar(protocol, 'https'),
-        code: faker.cc()
-    }
-})
+//Factory.blueprint('App/Models/Product', async (faker) => {
+    
+//})
 // const Factory = use('Factory')
 
 // Factory.blueprint('App/Models/User', (faker) => {
