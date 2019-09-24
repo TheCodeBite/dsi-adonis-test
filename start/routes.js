@@ -18,6 +18,10 @@ const Route = use('Route')
 
 Route.on('/').render('welcome')
 
+app.get('/', function(req, res){
+  res.redirect('/todo');
+});
+
 // RUTA DE USUARIO
 Route.group(() => {
   Route.post('users/register/', 'UserController.store');
