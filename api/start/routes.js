@@ -24,29 +24,29 @@ app.get('/', function(req, res){
 
 // RUTA DE USUARIO
 Route.group(() => {
-  Route.post('users/register/', 'UserController.store');
+  Route.post('users/register', 'UserController.store');
 }).prefix('api/v1/');
 
 Route.group(() =>{
-  Route.post('transaction/new/', 'TransactionController.store');
+  Route.post('transaction/new', 'TransactionController.store');
   Route.delete('transaction/delete/:id', 'TransactionController.destroy');
   Route.put('transaction/edit/:id', 'TransactionController.update');
 }).prefix('api/v1/');
 
 Route.group(() =>{
-  Route.post('product/register/', 'ProductController.store');
+  Route.post('product/register', 'ProductController.store');
   Route.delete('product/delete/:id', 'ProductController.destroy');
   Route.put('product/edit/:id', 'ProductController.update');
 }).prefix('api/v1/');
 
 Route.group(() => {
-  Route.post('sale/new/', 'SaleController.store');
+  Route.post('sale/new', 'SaleController.store');
   Route.delete('sale/delete/:id', 'SaleController.destroy');
   Route.put('sale/edit/:id', 'SaleController.update');
 }).prefix('api/v1');
 
 Route.group(() => {
-  Route.post('inventario/new/', 'InventarioController.store');
+  Route.post('inventario/new', 'InventarioController.store');
   Route.delete('inventario/delete/:id', 'InventarioController.destroy');
   Route.put('inventario/edit/:id', 'InventarioController.update');
 }).prefix('api/v1/')
