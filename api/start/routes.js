@@ -20,6 +20,7 @@ Route.on('/').render('welcome');
 
 // RUTA DE USUARIO
 Route.group(() => {
+  Route.get('users/', 'UserController.getUsers');
   Route.post('users/register', 'UserController.store');
   Route.post('users/login/', 'UserController.login')
 }).prefix('api/v1/');
