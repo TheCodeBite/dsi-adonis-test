@@ -2,6 +2,13 @@
 const Product = use('App/Models/Product')
 
 class ProductController {
+    
+    async getProducts({ request, response, view }){
+        let productos = Product.all();
+        
+        return response.json(productos);
+    }
+
     async store ( {request} ){
         const {code, name, img_url, description} = request.all();
 
@@ -39,6 +46,10 @@ class ProductController {
 
         return producto
 
+    }
+
+    async getAll(){
+        const product = await Product.request.all()
     }
 }
 

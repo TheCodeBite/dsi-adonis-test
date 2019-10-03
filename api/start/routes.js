@@ -25,24 +25,28 @@ Route.group(() => {
 }).prefix('api/v1/');
 
 Route.group(() =>{
+  Route.get('transaction/', 'TransactionController.getTransaction');
   Route.post('transaction/new', 'TransactionController.store');
   Route.delete('transaction/delete/:id', 'TransactionController.destroy');
   Route.put('transaction/edit/:id', 'TransactionController.update');
 }).prefix('api/v1/');
 
 Route.group(() =>{
+  Route.get('product/', 'ProductController.getProducts');
   Route.post('product/register', 'ProductController.store');
   Route.delete('product/delete/:id', 'ProductController.destroy');
   Route.put('product/edit/:id', 'ProductController.update');
 }).prefix('api/v1/');
 
 Route.group(() => {
+  Route.get('sale/', 'SaleController.getSale')
   Route.post('sale/new', 'SaleController.store');
   Route.delete('sale/delete/:id', 'SaleController.destroy');
   Route.put('sale/edit/:id', 'SaleController.update');
 }).prefix('api/v1');
 
 Route.group(() => {
+  Route.get('inventario/', 'InventarioController.getInventario');
   Route.post('inventario/new', 'InventarioController.store');
   Route.delete('inventario/delete/:id', 'InventarioController.destroy');
   Route.put('inventario/edit/:id', 'InventarioController.update');

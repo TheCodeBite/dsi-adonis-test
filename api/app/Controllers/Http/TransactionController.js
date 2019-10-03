@@ -3,6 +3,14 @@
 const Transaction = use('App/Models/Transaction');
 
 class TransactionController {
+
+    async getTransaction({ request, response, view }){
+        let transaction = Transaction.all();
+        
+        return response.json(transaction);
+    }
+
+
     async store ({ request }){
         const {inventario_id, type, quantity, description} = request.all();
 

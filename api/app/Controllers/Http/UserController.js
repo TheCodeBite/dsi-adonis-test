@@ -16,6 +16,12 @@ class UserController {
         return user;
     }
 
+    async getUsers({ request, response, view }){
+        let users = User.all();
+        
+        return response.json(users);
+    }
+
     async login({ request, auth }){
         const { email , password } = request.all();
         const token = await auth.attempt(email, password);

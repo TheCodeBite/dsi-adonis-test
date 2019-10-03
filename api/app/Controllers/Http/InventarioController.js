@@ -3,6 +3,14 @@
 const Inventario = use('App/Models/Inventario');
 
 class InventarioController {
+
+    async getInventario({ request, response, view }){
+        let inventarios = Inventario.all();
+        
+        return response.json(inventarios);
+    }
+
+
     async store({ request }) {
         const { quantity, price, tax, user_id, product_id } = request.all();
 

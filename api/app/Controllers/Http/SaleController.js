@@ -3,6 +3,13 @@
 const Sale = use('App/Models/Sale')
 
 class SaleController {
+
+    async getSale({ request, response, view }){
+        let sales = Sale.all();
+        
+        return response.json(sales);
+    }
+
     async store({ request }) {
         const { quantity, discoont, total, status, pay_method, user_id, product_id } = request.all();
 
