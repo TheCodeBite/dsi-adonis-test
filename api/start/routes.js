@@ -16,11 +16,12 @@
 /** @type {typeof import('@adonisjs/framework/src/Route/Manager')} */
 const Route = use('Route')
 
-Route.on('/').render('welcome')
+Route.on('/').render('welcome');
 
 // RUTA DE USUARIO
 Route.group(() => {
   Route.post('users/register', 'UserController.store');
+  Route.post('users/login/', 'UserController.login')
 }).prefix('api/v1/');
 
 Route.group(() =>{

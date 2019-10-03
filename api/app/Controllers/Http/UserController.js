@@ -4,15 +4,24 @@ const User = use('App/Models/User');
 class UserController {
     //convencion para el post
     async store({ request }){
-        const {username, email, rol} = request.all();
+        const {username, email, rol, password} = request.all();
 
         const user = await User.create({
             username,
             email,
-            rol
+            rol,
+            password
         });
 
         return user;
+    }
+
+    async login({ request, auth }){
+        const { email , password }
+
+        const token = await auth.attempt(email, password);
+
+        return token
     }
 }
 
