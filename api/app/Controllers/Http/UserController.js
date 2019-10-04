@@ -17,7 +17,7 @@ class UserController {
     }
 
     async getUsers({ request, response, view }){
-        let users = User.all();
+        let users =  await User.all();
         
         return response.json(users);
     }
