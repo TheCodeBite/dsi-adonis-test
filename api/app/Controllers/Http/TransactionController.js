@@ -5,7 +5,7 @@ const Transaction = use('App/Models/Transaction');
 class TransactionController {
 
     async getTransaction({ request, response, view }){
-        let transaction = Transaction.all();
+        let transaction = await Transaction.all();
         
         return response.json(transaction);
     }

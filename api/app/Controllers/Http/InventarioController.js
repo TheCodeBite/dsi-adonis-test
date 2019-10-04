@@ -5,7 +5,7 @@ const Inventario = use('App/Models/Inventario');
 class InventarioController {
 
     async getInventario({ request, response, view }){
-        let inventarios = Inventario.all();
+        let inventarios = await Inventario.all();
         
         return response.json(inventarios);
     }

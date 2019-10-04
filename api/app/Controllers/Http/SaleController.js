@@ -5,7 +5,7 @@ const Sale = use('App/Models/Sale')
 class SaleController {
 
     async getSale({ request, response, view }){
-        let sales = Sale.all();
+        let sales = await Sale.all();
         
         return response.json(sales);
     }

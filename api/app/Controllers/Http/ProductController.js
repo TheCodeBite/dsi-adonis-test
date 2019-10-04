@@ -4,7 +4,7 @@ const Product = use('App/Models/Product')
 class ProductController {
     
     async getProducts({ request, response, view }){
-        let productos = Product.all();
+        let productos = await Product.all();
         
         return response.json(productos);
     }
